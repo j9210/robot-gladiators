@@ -18,7 +18,7 @@ var enemyAttack = 12;
 // "Fight" Function
 var fight = function (enemyName) {
     // repeat and execute as long as the enemy robot is alive
-    while(enemyHealth > 0){
+    while(enemyHealth > 0 && playerHealth > 0){
         // Alert users that they are starting the round
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
     console.log(promptFight);
@@ -33,6 +33,7 @@ var fight = function (enemyName) {
         // check enemy's health
         if (enemyHealth <= 0) {
             window.alert(enemyName + " has died!");
+            break;
         } else {
             window.alert(enemyName + " still has " + enemyHealth + " health left.");
         }
@@ -46,6 +47,7 @@ var fight = function (enemyName) {
         //check player's health
         if (playerHealth <= 0) {
             window.alert(playerName + " has died!");
+            break;
         } else {
             window.alert(playerName + " still has " + playerHealth + " health left.");
         }
